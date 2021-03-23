@@ -2,7 +2,8 @@
   "name": "pos-file",
 	"displayName": "pos-file",
 	"description": "help us create files more convenient and standardized",
-	"version": "0.0.1",
+	"version": "1.1.1",
+	"publisher": "ouyangdan",
 	"engines": {
 		"vscode": "^1.54.0"
 	},
@@ -10,15 +11,90 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:pos-file.helloWorld"
+        "onLanguage:typescript"
 	],
 	"main": "./extension.js",
+	
 	"contributes": {
-		"commands": [{
-            "command": "pos-file.helloWorld",
-            "title": "Hello World"
-
-		}]
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "pos-file.createPage",
+					"group": "navigation@1"
+				},
+				{
+					"command": "pos-file.createAllModel",
+					"group": "navigation@2"
+				},
+				{
+					"command": "pos-file.createView",
+					"group": "navigation@3"
+				},
+				{
+					"command": "pos-file.createService",
+					"group": "navigation@4"
+				},
+				{
+					"command": "pos-file.createModel",
+					"group": "navigation@4"
+				},
+				{
+					"command": "pos-file.createDao",
+					"group": "navigation@4"
+				},
+				{
+					"command": "pos-file.createApi",
+					"group": "navigation@4"
+				},
+				{
+					"command": "pos-file.createRoute",
+					"group": "navigation@4"
+				},
+				{
+					"command": "pos-file.createPopup",
+					"group": "navigation@4"
+				}			
+				
+			]
+		},
+		"commands": [
+			{
+				"command": "pos-file.createApi",
+				"title": "createApi"
+			},
+			{
+				"command": "pos-file.createDao",
+				"title": "createDao"
+			},
+			{
+				"command": "pos-file.createModel",
+				"title": "createModel"
+			},
+			{
+				"command": "pos-file.createAllModel",
+				"title": "createAllModel"
+			},
+			{
+				"command": "pos-file.createService",
+				"title": "createService"
+			},
+			{
+				"command": "pos-file.createView",
+				"title": "createView"
+			},
+			{
+				"command": "pos-file.createPage",
+				"title": "createPage"
+			},
+			{
+				"command": "pos-file.createPopup",
+				"title": "createPopup"
+			},
+			{
+				"command": "pos-file.createRoute",
+				"title": "createRoute"
+			}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",

@@ -1,65 +1,56 @@
 # pos-file README
 
-This is the README for your extension "pos-file". After writing up a brief description, we recommend including the following sections.
+pos-file是一个专为千牵科技POS收银端服务的文件创建插件。开发这个插件的目的在于确保每个开发者的代码组织风格接近，每个新文件都尽量符合新框架的代码结构和代码分层，让开发者花更多的时间专注业务逻辑的开发。
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+> - 仅开发语言为TypeScript时才会启用插件。
+> - 插件支持以下右键菜单：
+>
+> 1. createPage：一键创建功能
+> 2. createAllModel：一键创建model层所有文件
+> 3. createDao：一键创建dao层文件
+> 4. createModel：一键创建model层文件
+> 5. createService：一键创建service层文件
+> 6. createView：一键创建view层文件（会自动添加路由）
+> 7. createApi：一键创建api层文件
+> 8. createPopup: 一键创建弹窗文件‘
+> 9. createRoute: 一键添加路由（createView时会自动添加路由，目前仅备用）
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+确保pos项目目录下的src目录存在，确保鼠标右键针对src目录
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* 右键src文件夹显示命令列表
+* 暂不支持快捷键（后续考虑支持）
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+欢迎大家提bug和提出可能的优化点 [抱拳][抱拳]
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
+
+- test
+
 
 ### 1.0.0
 
-Initial release of ...
+- 正式版本
 
-### 1.0.1
-
-Fixed issue #.
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+- 2021/03/23【新增】 新增一键创建弹窗文件功能
 
------------------------------------------------------------------------------------------------------------
+### 1.1.1
 
-## Working with Markdown
+2021/03/23【新增】 新增一键创建路由功能
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+2021/03/23【更新】更新createView命令，运行createView创建页面后会自动为页面添加路由
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
 
-### For more information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
