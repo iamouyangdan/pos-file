@@ -2,8 +2,17 @@
   "name": "pos-file",
 	"displayName": "pos-file",
 	"description": "help us create files more convenient and standardized",
+	"keywords": ["pos", "pos-file", "qqbibi", "ouyangdan", "千牵"],
 	"version": "1.2.2",
 	"publisher": "ouyangdan",
+	"author": {
+		"name": "ouyangdan"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/iamouyangdan/pos-file/issues",
+		"email": "1183719396@qq.com"
+	},
 	"repository": {
 		"type": "git",
         "url": "https://github.com/iamouyangdan/pos-file.git"
