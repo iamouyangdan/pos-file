@@ -143,18 +143,17 @@ export default {
 }
 
 const getPopupText = (name) => {
-  return `
-
-  <template>
+  return  `
+<template>
   <div class="ui-popup">
       
   </div>
-  </template>
-  <script lang="ts">
+</template>
+<script lang="ts">
   // class-style组件
   import { Component, Prop, Vue, Emit , Watch} from "vue-property-decorator";
   import {eventBusKey} from '@/config/constant'
-  import {isFunction, accMul, deepCopySingle, transPrice, uuid} from '@/utils/common'
+  import {isFunction, accMul, uuid, deepCopySingle, transPrice} from '@/utils/common'
   import OrderService, {Order} from '@/services/OrderService'
   import OrderStore, {OrderPaymentParams} from '@/store/module/order.store'
   
@@ -171,7 +170,7 @@ const getPopupText = (name) => {
           // 禁用键盘事件，关闭弹窗时恢复，即在close()中恢复 (存在多个弹窗时，使用组件实例唯一值this._cid标识当前弹窗，否则关闭上层弹窗后当前弹窗的禁用会失效)
           this.$bus.$emit(eventBusKey.ON_DISABLE_KEYBOARD);
           this.$bus.$on(eventBusKey.ON_SUB_KEYBOARD, (key: string, event: any) => {
-              console.log("DemoPopup key=", key);
+              console.log("${name}Popup key=", key);
               this.action(key);
           });
       }
@@ -205,12 +204,11 @@ const getPopupText = (name) => {
       destroyed () {
       }
   }
-  </script>
-  <style lang="scss" scoped>
+</script>
+<style lang="scss" scoped>
   @import '@/styles/variable.scss';
   
-  </style>
-  
+</style>
   `
 }
 

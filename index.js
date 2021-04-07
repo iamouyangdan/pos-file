@@ -121,7 +121,7 @@ const createAllModel = function (e) {
         return vscode.window.showErrorMessage("当前选中目录不是src目录，请选择src目录进行操作!!!");
     }
     const result = vscode.window.showInputBox({
-        prompt: "请依次输入 数据库名称,表名称,api文件名称, 使用空格分隔，如order return_order order表示order库 return_order表 order对应api",
+        prompt: "请依次输入 数据库名称,表名称,api文件名称, 使用空格分隔，如order return_order order表示order库 return_order表 order对应api。api文件名称不输入时则不进行创建，即只创建3个文件",
         value: "",
         placeHolder: "提示（格式：[数据库名称] [表名称] [api名称]）",
     });
@@ -137,7 +137,7 @@ const createPage = function (e){
         return vscode.window.showErrorMessage("当前选中目录不是src目录，请选择src目录进行操作!!!");
     }
     const result = vscode.window.showInputBox({
-        prompt: "请依次输入 页面名称，数据库名称, 表名称, api文件名称, 使用空格分隔，如home order return_order order表示Home.vue页面 order库 return_order表 order对应api",
+        prompt: "请依次输入 页面名称，数据库名称, 表名称, api文件名称, 使用空格分隔，如home order return_order order表示Home.vue页面 order库 return_order表 order对应api。api文件名称不输入时则不进行创建，即只创建5个文件。",
         value: "",
         placeHolder: "提示（格式：[页面名称] [数据库名称] [表名称] [api名称]）",
     });
@@ -167,6 +167,12 @@ const createRoute = function(e) {
 module.exports = function (context) {
     
     console.log('context ', context)
+    context.subscriptions.push(vscode.commands.registerCommand('pos-file.createPage', (e) => {
+        createPage(e)
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('pos-file.createAllModel', (e) => {
+        createAllModel(e)
+    }));
     context.subscriptions.push(vscode.commands.registerCommand('pos-file.createApi', (e) => {
         createApi(e)
     }));
@@ -179,21 +185,12 @@ module.exports = function (context) {
         createModel(e)
     }));
 
-    context.subscriptions.push(vscode.commands.registerCommand('pos-file.createAllModel', (e) => {
-        createAllModel(e)
-    }));
-    
-
     context.subscriptions.push(vscode.commands.registerCommand('pos-file.createService', (e) => {
         createService(e)
     }));
 
     context.subscriptions.push(vscode.commands.registerCommand('pos-file.createView', (e) => {
         createView(e)
-    }));
-
-    context.subscriptions.push(vscode.commands.registerCommand('pos-file.createPage', (e) => {
-        createPage(e)
     }));
 
     

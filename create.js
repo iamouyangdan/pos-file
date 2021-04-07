@@ -246,7 +246,6 @@ function addPage(dir, inputValue) {
     let daoData = new Uint8Array(Buffer.from(dataMap.dao))
     let configData = new Uint8Array(Buffer.from(dataMap.config))
     const pageName = toFirstWordUpperCase(_pageName)
-    let viewData = new Uint8Array(Buffer.from(getViewText(pageName)))
     let serviceData = new Uint8Array(Buffer.from(getServiceText(pageName)))
     try {
         // model层
@@ -260,8 +259,7 @@ function addPage(dir, inputValue) {
         fs.writeFileSync(`${dir}/services/${pageName}Service.ts`, serviceData);
 
         // view层
-        mkdirsSync(`${dir}/views/`)
-        fs.writeFileSync(`${dir}/views/${pageName}.vue`, viewData);
+        addView(dir, pageName)
     } catch(e) {
         console.error('创建文件出错了', e)
         vscode.window.showErrorMessage("创建文件出错了" + e.message);

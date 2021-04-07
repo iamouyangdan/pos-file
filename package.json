@@ -2,8 +2,12 @@
   "name": "pos-file",
 	"displayName": "pos-file",
 	"description": "help us create files more convenient and standardized",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"publisher": "ouyangdan",
+	"repository": {
+		"type": "git",
+        "url": "https://github.com/iamouyangdan/pos-file.git"
+	},
 	"engines": {
 		"vscode": "^1.54.0"
 	},
@@ -11,88 +15,95 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onLanguage:typescript"
+        "*"
 	],
 	"main": "./extension.js",
 	
 	"contributes": {
 		"menus": {
-			"explorer/context": [
+			"pos-file.create": [
 				{
 					"command": "pos-file.createPage",
-					"group": "navigation@1"
+					"group":"navigation@1"
 				},
 				{
 					"command": "pos-file.createAllModel",
-					"group": "navigation@2"
+					"group":"navigation@1"
 				},
 				{
 					"command": "pos-file.createView",
-					"group": "navigation@3"
+					"group":"navigation@1"
 				},
 				{
-					"command": "pos-file.createService",
-					"group": "navigation@4"
+					"command": "pos-file.createService"
 				},
 				{
-					"command": "pos-file.createModel",
-					"group": "navigation@4"
+					"command": "pos-file.createModel"
 				},
 				{
-					"command": "pos-file.createDao",
-					"group": "navigation@4"
+					"command": "pos-file.createDao"
 				},
 				{
-					"command": "pos-file.createApi",
-					"group": "navigation@4"
+					"command": "pos-file.createApi"
 				},
 				{
-					"command": "pos-file.createRoute",
-					"group": "navigation@4"
+					"command": "pos-file.createRoute"
 				},
 				{
-					"command": "pos-file.createPopup",
-					"group": "navigation@4"
+					"command": "pos-file.createPopup"
+				}
+			],
+			"explorer/context": [
+				{	
+					"submenu":"pos-file.create",
+					"group":"navigation@1",
+					"when":"explorerResourceIsFolder == true"
 				}			
 				
 			]
 		},
+		"submenus": [
+			{
+				"id": "pos-file.create",
+				"label": "新建POS文件"
+			}
+		],
 		"commands": [
 			{
 				"command": "pos-file.createApi",
-				"title": "createApi"
+				"title": "api层1个文件"
 			},
 			{
 				"command": "pos-file.createDao",
-				"title": "createDao"
+				"title": "dao层2个文件"
 			},
 			{
 				"command": "pos-file.createModel",
-				"title": "createModel"
+				"title": "model层1个文件"
 			},
 			{
 				"command": "pos-file.createAllModel",
-				"title": "createAllModel"
+				"title": "model层4个文件"
 			},
 			{
 				"command": "pos-file.createService",
-				"title": "createService"
+				"title": "service层1个文件"
 			},
 			{
 				"command": "pos-file.createView",
-				"title": "createView"
+				"title": "view层1个文件"
 			},
 			{
 				"command": "pos-file.createPage",
-				"title": "createPage"
+				"title": "完整页面6个文件"
 			},
 			{
 				"command": "pos-file.createPopup",
-				"title": "createPopup"
+				"title": "1个弹窗文件"
 			},
 			{
 				"command": "pos-file.createRoute",
-				"title": "createRoute"
+				"title": "1个路由"
 			}
 		]
 	},

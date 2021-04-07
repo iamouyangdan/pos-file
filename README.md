@@ -4,18 +4,9 @@ pos-file是一个专为千牵科技POS收银端服务的文件创建插件。开
 
 ## Features
 
-> - 仅开发语言为TypeScript时才会启用插件。
-> - 插件支持以下右键菜单：
+> - 打开vscode即启用插件。
+> - 右键菜单支持批量新建POS文件
 >
-> 1. createPage：一键创建功能
-> 2. createAllModel：一键创建model层所有文件
-> 3. createDao：一键创建dao层文件
-> 4. createModel：一键创建model层文件
-> 5. createService：一键创建service层文件
-> 6. createView：一键创建view层文件（会自动添加路由）
-> 7. createApi：一键创建api层文件
-> 8. createPopup: 一键创建弹窗文件‘
-> 9. createRoute: 一键添加路由（createView时会自动添加路由，目前仅备用）
 
 ## Requirements
 
@@ -34,23 +25,26 @@ pos-file是一个专为千牵科技POS收银端服务的文件创建插件。开
 
 ### 0.0.1
 
-- test
+- test。
 
 
 ### 1.0.0
 
-- 正式版本
+- 正式版本。
 
 
 ### 1.1.0
 
-- 2021/03/23【新增】 新增一键创建弹窗文件功能
+- 2021/03/23【新增】 新增一键创建弹窗文件功能。
 
 ### 1.1.1
 
-2021/03/23【新增】 新增一键创建路由功能
+2021/03/23【新增】 新增一键创建路由功能。
 
-2021/03/23【更新】更新createView命令，运行createView创建页面后会自动为页面添加路由
+2021/03/23【更新】更新createView命令，运行createView创建页面后会自动为页面添加路由。
 
 
 
+### 1.2.0
+
+- 2021/04/07【更新】调整右键菜单，将全部的命令合并，作为“新建POS文件”的子菜单。
